@@ -680,7 +680,9 @@ var script = {
         scroll = index * this.itemSize;
       }
 
-      this.scrollToPosition(scroll);
+      var size = this.sizes[index].size;
+      var offsetPosition = size ? scroll - size : scroll;
+      this.scrollToPosition(offsetPosition);
     },
     scrollToPosition: function scrollToPosition(position) {
       if (this.direction === 'vertical') {
