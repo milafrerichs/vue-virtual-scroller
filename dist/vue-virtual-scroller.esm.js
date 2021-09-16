@@ -612,7 +612,9 @@ var script$2 = {
       } else {
         scroll = index * this.itemSize;
       }
-      this.scrollToPosition(scroll);
+      const { size } = this.sizes[index];
+      const offsetPosition = size ? scroll - size : scroll;
+      this.scrollToPosition(offsetPosition);
     },
 
     scrollToPosition (position) {
@@ -911,6 +913,9 @@ script$1.render = render;
 script$1.__file = "src/components/DynamicScroller.vue";
 
 var script = {
+  compatConfig: {
+    RENDER_FUNCTION: false,
+  },
   name: 'DynamicScrollerItem',
 
   inject: [

@@ -2,6 +2,9 @@
 import { h } from 'vue'
 
 export default {
+  compatConfig: {
+    RENDER_FUNCTION: false,
+  },
   name: 'DynamicScrollerItem',
 
   inject: [
